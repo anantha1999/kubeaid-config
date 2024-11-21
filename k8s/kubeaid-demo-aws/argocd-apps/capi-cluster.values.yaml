@@ -12,7 +12,7 @@ provider:
 aws:
   secretName: cloud-credentials
   sshKeyName: kubeaid-demo
-  region: 
+  region: us-east-1
   bastion:
     enabled: true
   vpc:
@@ -22,7 +22,7 @@ aws:
   controlPlane:
     loadBalancer:
       loadBalancerType: nlb
-    region: 
+    region: us-east-1
     replicas: 1
     instanceType: t4g.medium
     ami:
