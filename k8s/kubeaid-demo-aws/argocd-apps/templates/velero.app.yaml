@@ -12,7 +12,7 @@ spec:
   project: default
   sources:
     - repoURL: https://github.com/Obmondo/KubeAid
-			path: argocd-helm-charts/velero
+      path: argocd-helm-charts/velero
       targetRevision: HEAD
       helm:
         valueFiles:
