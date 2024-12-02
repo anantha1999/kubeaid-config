@@ -13,7 +13,7 @@ aws:
   secretName: cloud-credentials
   sshKeyName: kubeaid-demo
   region: us-east-1
-	bastion:
+  bastion:
     enabled: true
   vpc:
     cidrBlock: 10.14.0.0/22
