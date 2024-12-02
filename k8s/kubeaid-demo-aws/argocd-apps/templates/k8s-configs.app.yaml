@@ -1,18 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: secrets
-  namespace: argo-cd
-
+  name: k8s-configs
+  namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: sealed-secrets
+    namespace: kube-system
   project: default
   source:
-    path: k8s/kubeaid-demo-aws/sealed-secrets
-    repoURL: https://github.com/Archisman-Mridha/kubeaid-config
+    repoURL: https://github.com/Obmondo/KubeAid
+    path: k8s/kubeaid-demo-aws/k8s-configs
     targetRevision: HEAD
     directory:
       recurse: true
-  syncPolicy: {}
