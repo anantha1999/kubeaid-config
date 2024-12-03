@@ -4,7 +4,7 @@ metadata:
   annotations:
     iam.amazonaws.com/allowed-roles: |
       ["arn:aws:iam::762233771014:role/velero-kubeaid-demo-aws"]
-name: velero
+  name: velero
 spec:	
   finalizers:	
     - kubernetes
