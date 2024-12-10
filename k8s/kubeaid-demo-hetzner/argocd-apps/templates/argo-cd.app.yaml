@@ -12,7 +12,7 @@ spec:
     namespace: argo-cd
   project: default
   sources:
-    - repoURL: https://github.com/Obmondo/KubeAid
+    - repoURL: https://github.com/Archisman-Mridha/kubeaid
       path: argocd-helm-charts/argo-cd
       targetRevision: HEAD
       helm:

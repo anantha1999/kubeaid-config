@@ -9,7 +9,7 @@ spec:
     namespace: cluster-autoscaler
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/Obmondo/KubeAid
+    - repoURL: https://github.com/Archisman-Mridha/kubeaid
       path: argocd-helm-charts/cluster-autoscaler
       targetRevision: HEAD
       helm:
