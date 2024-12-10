@@ -20,21 +20,21 @@ hetzner:
   controlPlaneRegions:
     - hel1
   nodes:
-  1866472:
-    name: htzhel1-ax41d.enableit.dk
-    maintenanceMode: false
-    wwn:
-      - 0x50000397cb700acd
-      - 0x500003981be00179
-  1866482:
-    name: htzhel1-ax41e.enableit.dk
-    maintenanceMode: false
-    wwn:
-      - 0x5000cca25ed86494
-      - 0x5000cca25ecf496b
-  1866484:
-    name: htzhel1-ax41f.enableit.dk
-    maintenanceMode: false
-    wwn:
-      - 0x50014ee2097c6ca4
-      - 0x50014ee2097c9304
+    1866472:
+      name: htzhel1-ax41d.enableit.dk
+      maintenanceMode: false
+      wwn:
+        - 0x50000397cb700acd
+        - 0x500003981be00179
+    1866482:
+      name: htzhel1-ax41e.enableit.dk
+      maintenanceMode: false
+      wwn:
+        - 0x5000cca25ed86494
+        - 0x5000cca25ecf496b
+    1866484:
+      name: htzhel1-ax41f.enableit.dk
+      maintenanceMode: false
+      wwn:
+        - 0x50014ee2097c6ca4
+        - 0x50014ee2097c9304
