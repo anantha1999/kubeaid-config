@@ -1,11 +1,12 @@
 global:
   clusterName: kubeaid-demo-aws
   kubernetes:
-    version: v1.31.0
+    version: v1.30.0
   kubeaid:
     repo: https://github.com/Obmondo/KubeAid
   kubeaidConfig:
     repo: https://github.com/Archisman-Mridha/kubeaid-config
+
 provider:
   aws: true
 
@@ -26,14 +27,14 @@ aws:
     replicas: 1
     instanceType: t4g.medium
     ami:
-      id: ami-0fc044fa0d061d18d
+      id: ami-0c4219b11327ef260
   nodeGroups:
   - name: primary
     replicas: 1
     instanceType: t4g.medium
     sshKeyName: kubeaid-demo
     ami:
-      id: ami-0fc044fa0d061d18d
+      id: ami-0c4219b11327ef260
     rootVolumeSize: 35
     labels:
       node-role.kubernetes.io/bootstrapper: ""
