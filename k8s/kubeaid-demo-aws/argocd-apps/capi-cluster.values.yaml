@@ -1,12 +1,11 @@
 global:
   clusterName: kubeaid-demo-aws
   kubernetes:
-    version: v1.30.0
+    version: v1.31.0
   kubeaid:
     repo: https://github.com/Obmondo/KubeAid
   kubeaidConfig:
     repo: https://github.com/Archisman-Mridha/kubeaid-config
-
 provider:
   aws: true
 
