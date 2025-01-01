@@ -1,27 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets
+  name: kube2iam
   namespace: argo-cd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: sealed-secrets
+    namespace: aws
   project: default
   sources:
     - repoURL: https://github.com/Obmondo/KubeAid
-      path: argocd-helm-charts/sealed-secrets
+      path: argocd-helm-charts/kube2iam
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-aws/argocd-apps/sealed-secrets.values.yaml
+          - $values/k8s/kubeaid-youtube-demo/argocd-apps/kube2iam.values.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
   syncPolicy:
     syncOptions:
-      - ApplyOutOfSyncOnly=true
       - CreateNamespace=true
