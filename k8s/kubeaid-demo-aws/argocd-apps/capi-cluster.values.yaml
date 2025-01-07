@@ -28,9 +28,46 @@ aws:
     ami:
       id: ami-0c4219b11327ef260
     apiServer: 
-      extraargs: {}
-      extravolumes: []
-      extraenvs: []
+      extraArgs:
+          audit-log-maxage: "10"
+          audit-log-maxbackup: "1"
+          audit-log-maxsize: "100"
+          audit-log-path: /var/log/kube-apiserver-audit.log
+          audit-policy-file: /srv/kubernetes/audit.yaml
+      extraVolumes:
+          - name: audit-policy-file
+            hostpath: /srv/kubernetes/audit.yaml
+            mountpath: /srv/kubernetes/audit.yaml
+            readonly: true
+            pathtype: ""
+          - name: log-backend
+            hostpath: /var/log/kube-apiserver-audit.log
+            mountpath: /var/log/kube-apiserver-audit.log
+            readonly: false
+            pathtype: ""
+    files: 
+      - path: /srv/kubernetes/audit.yaml
+        owner: ""
+        permissions: ""
+        encoding: ""
+        append: false
+        content: |
+          apiVersion: audit.k8s.io/v1
+          kind: Policy
+      
+          # Don't generate audit events for all requests in the RequestReceived stage.
+          omitStages:
+            - "RequestReceived"
+      
+          rules:
+            # Log events with metadata (requesting user, timestamp, resource, verb, etc.) but not request or
+            # response body.
+            - level: Metadata
+              # Long-running requests like watches that fall under this rule will not generate an audit event
+              # in RequestReceived stage. We will omit those logs.
+              omitStages:
+                - "RequestReceived"
+        contentfrom: null
   nodeGroups:
   - name: primary
     replicas: 1
