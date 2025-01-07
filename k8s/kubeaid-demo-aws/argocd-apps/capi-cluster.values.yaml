@@ -27,6 +27,10 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-0c4219b11327ef260
+    apiServer: 
+      extraargs: {}
+      extravolumes: []
+      extraenvs: []
   nodeGroups:
   - name: primary
     replicas: 1
