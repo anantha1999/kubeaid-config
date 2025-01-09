@@ -32,7 +32,7 @@ aws:
           audit-log-maxage: "10"
           audit-log-maxbackup: "1"
           audit-log-maxsize: "100"
-          audit-log-path: /var/log/kube-apiserver-audit-logs
+          audit-log-path: /var/log/kube-apiserver-audit.logs
           audit-policy-file: /srv/kubernetes/audit.yaml
       extraVolumes:
           - name: audit-policy-file
@@ -41,10 +41,10 @@ aws:
             readOnly: true
             pathType: FileOrCreate
           - name: log-backend
-            hostPath: /var/log/kube-apiserver-audit-logs
-            mountPath: /var/log/kube-apiserver-audit-logs
+            hostPath: /var/log/kube-apiserver-audit.logs
+            mountPath: /var/log/kube-apiserver-audit.logs
             readOnly: false
-            pathType: DirectoryOrCreate
+            pathType: FileOrCreate
     files: 
       - path: /srv/kubernetes/audit.yaml
         append: false
