@@ -66,8 +66,7 @@ aws:
 		- path: /srv/kubernetes/audit.yaml
       append: false
       content: |
-			  
-          apiVersion: audit.k8s.io/v1
+			            apiVersion: audit.k8s.io/v1
           kind: Policy
           # Don't generate audit events for all requests in the RequestReceived stage.
           omitStages:
