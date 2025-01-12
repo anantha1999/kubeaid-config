@@ -38,13 +38,13 @@ aws:
           - name: audit-policy-file
             hostPath: /srv/kubernetes/audit.yaml
             mountPath: /srv/kubernetes/audit.yaml
-            readOnly: true
             pathType: FileOrCreate
+            readOnly: true
           - name: log-backend
             hostPath: /var/log/kube-apiserver-audit.logs
             mountPath: /var/log/kube-apiserver-audit.logs
-            readOnly: false
             pathType: FileOrCreate
+            readOnly: false
       files:
           - path: /srv/kubernetes/audit.yaml
             content: |
