@@ -47,7 +47,6 @@ aws:
             pathType: FileOrCreate
       files:
           - path: /srv/kubernetes/audit.yaml
-            append: false
             content: |
               apiVersion: audit.k8s.io/v1
               kind: Policy
