@@ -17,3 +17,6 @@ cluster-autoscaler:
   autoDiscovery:
     clusterName: kubeaid-demo-aws
     namespace: capi-cluster
+
+enableClusterAPIScaleFromZeroSupport:
+  aws: true
