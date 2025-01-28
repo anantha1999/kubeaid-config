@@ -16,7 +16,7 @@ aws:
   bastion:
     enabled: true
   vpc:
-    id: .AWSConfig.VPCID
+    id: nil
     cidrBlock: 10.14.0.0/22
   pods:
     cidrBlock: 10.244.0.0/16
