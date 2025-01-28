@@ -27,8 +27,8 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-0c4219b11327ef260
-    apiServer: 
-      extraArgs:
+    apiServer:
+			      extraArgs:
           audit-log-maxage: "10"
           audit-log-maxbackup: "1"
           audit-log-maxsize: "100"
