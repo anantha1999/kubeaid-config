@@ -27,8 +27,8 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-0c4219b11327ef260
-    apiServer:
-		      extraArgs:
+    apiServer: 
+      extraArgs:
           audit-log-maxage: "10"
           audit-log-maxbackup: "1"
           audit-log-maxsize: "100"
@@ -60,30 +60,30 @@ aws:
                   # in RequestReceived stage. We will omit those logs.
                   omitStages:
                     - "RequestReceived"
-  nodeGroups:
-  - name: primary
-    replicas: 2
-    minSize: 1
-    maxSize: 3
-    instanceType: t4g.medium
-    sshKeyName: kubeaid-demo
-    ami:
-      id: ami-0c4219b11327ef260
-    rootVolumeSize: 35
-    labels:
-      node-role.kubernetes.io/bootstrapper: ""
-      node.cluster.x-k8s.io/nodegroup: bootstrapper
-    taints: []
-  - name: secondary
-    replicas: 0
-    minSize: 0
-    maxSize: 1
-    instanceType: t4g.medium
-    sshKeyName: kubeaid-demo
-    ami:
-      id: ami-0c4219b11327ef260
-    rootVolumeSize: 35
-    labels:
-      node-role.kubernetes.io/scale-to-zero-test-subject: ""
-      node.cluster.x-k8s.io/nodegroup: scale-to-zero-test-subject
-    taints: []
+  nodeGroups: 
+    - name: primary
+      replicas: 2
+      minSize: 1
+      maxSize: 3
+      instanceType: t4g.medium
+      sshKeyName: kubeaid-demo
+      ami:
+        id: ami-0c4219b11327ef260
+      rootVolumeSize: 35
+      labels:
+        node-role.kubernetes.io/bootstrapper: ""
+        node.cluster.x-k8s.io/nodegroup: bootstrapper
+      taints: []
+    - name: secondary
+      replicas: 0
+      minSize: 0
+      maxSize: 1
+      instanceType: t4g.medium
+      sshKeyName: kubeaid-demo
+      ami:
+        id: ami-0c4219b11327ef260
+      rootVolumeSize: 35
+      labels:
+        node-role.kubernetes.io/scale-to-zero-test-subject: ""
+        node.cluster.x-k8s.io/nodegroup: scale-to-zero-test-subject
+      taints: []
