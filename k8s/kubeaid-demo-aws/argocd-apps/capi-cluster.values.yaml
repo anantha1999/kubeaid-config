@@ -1,7 +1,7 @@
 global:
   clusterName: kubeaid-demo-aws
   kubernetes:
-    version: v1.31.0
+    version: v1.32.0
   kubeaid:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
@@ -26,33 +26,34 @@ aws:
     replicas: 1
     instanceType: t4g.medium
     ami:
-      id: ami-0c4219b11327ef260
-    apiServer: 
+      # id: ami-0c4219b11327ef260
+      id: ami-042e8a22a289729b1
+    apiServer:
       extraArgs: {}
       extraVolumes: []
       files: []
-  nodeGroups: 
+  nodeGroups:
     - name: primary
-      replicas: 2
       minSize: 1
       maxSize: 3
       instanceType: t4g.medium
       sshKeyName: kubeaid-demo
       ami:
-        id: ami-0c4219b11327ef260
+        # id: ami-0c4219b11327ef260
+        id: ami-042e8a22a289729b1
       rootVolumeSize: 35
       labels:
         node-role.kubernetes.io/bootstrapper: ""
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
     - name: secondary
-      replicas: 0
       minSize: 0
       maxSize: 1
       instanceType: t4g.medium
       sshKeyName: kubeaid-demo
       ami:
-        id: ami-0c4219b11327ef260
+        # id: ami-0c4219b11327ef260
+        id: ami-042e8a22a289729b1
       rootVolumeSize: 35
       labels:
         node-role.kubernetes.io/scale-to-zero-test-subject: ""
