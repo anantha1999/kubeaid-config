@@ -1,6 +1,6 @@
 kube2iam:
   host:
-    iptables: true
+    iptables: false
     interface: lxc+
   rbac:
     create: true
@@ -13,4 +13,3 @@ kube2iam:
       operator: Exists
   extraArgs:
     namespace-restrictions: ""
-    base-role-arn: "arn:aws:iam::762233771014:role/nodes.cluster-api-provider-aws.sigs.k8s.io"
