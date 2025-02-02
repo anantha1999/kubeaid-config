@@ -33,7 +33,6 @@ aws:
       files: []
   nodeGroups: 
     - name: primary
-      replicas: 2
       minSize: 1
       maxSize: 3
       instanceType: t4g.medium
@@ -46,7 +45,6 @@ aws:
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
     - name: secondary
-      replicas: 0
       minSize: 0
       maxSize: 1
       instanceType: t4g.medium
