@@ -2,6 +2,8 @@ global:
   clusterName: kubeaid-demo-aws
   kubernetes:
     version: v1.31.0
+  clusterAPI:
+    version: 1.9.4
   kubeaid:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
@@ -27,11 +29,11 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-0c4219b11327ef260
-    apiServer: 
+    apiServer:
       extraArgs: {}
       extraVolumes: []
       files: []
-  nodeGroups: 
+  nodeGroups:
     - name: primary
       minSize: 1
       maxSize: 3
