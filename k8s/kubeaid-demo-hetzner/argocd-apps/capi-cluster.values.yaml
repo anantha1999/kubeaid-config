@@ -30,5 +30,6 @@ hetzner:
           node.cluster.x-k8s.io/nodegroup: bootstrapper
         taints: []
         machineType: cax11
+        failureDomain: fsn1
         sshKeys:
           - name: cluster
