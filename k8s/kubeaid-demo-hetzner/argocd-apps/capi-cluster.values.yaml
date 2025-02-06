@@ -20,7 +20,7 @@ hetzner:
       regions: 
         - fsn1
       replicas: 3
-      machineType: cax11
+      machineType: cax21
     nodeGroups: 
       - name: bootstrapper
         minSize: 1
@@ -29,7 +29,7 @@ hetzner:
           node-role.kubernetes.io/bootstrapper: ""
           node.cluster.x-k8s.io/nodegroup: bootstrapper
         taints: []
-        machineType: cax11
+        machineType: cax21
         failureDomain: fsn1
         sshKeys:
           - name: cluster
