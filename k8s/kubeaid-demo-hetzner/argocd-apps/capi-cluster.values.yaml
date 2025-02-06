@@ -11,7 +11,7 @@ provider:
 
 hetzner:
   hcloud:
-    sshKeyName: cluster
+    sshKeyName: kubeaid-demo
     enabled: true
     controlPlane:
       loadBalancer: 
