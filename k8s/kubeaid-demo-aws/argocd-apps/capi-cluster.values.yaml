@@ -33,11 +33,11 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-0c4219b11327ef260
-    apiServer:
+    apiServer: 
       extraArgs: {}
       extraVolumes: []
       files: []
-  nodeGroups:
+  nodeGroups: 
     - name: primary
       minSize: 1
       maxSize: 3
@@ -74,4 +74,3 @@ aws:
       ami:
         id: ami-0c4219b11327ef260
       rootVolumeSize: 35
-
