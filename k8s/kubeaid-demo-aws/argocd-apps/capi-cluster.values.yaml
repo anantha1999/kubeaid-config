@@ -98,17 +98,3 @@ aws:
       ami:
         id: ami-0c4219b11327ef260
       rootVolumeSize: 35
-    - name: tertiary
-      minSize: 1
-      maxSize: 2
-      cpu: 2
-      memory: 4096
-      labels:
-        node-role.kubernetes.io/cordon-test-subject: ""
-        node.cluster.x-k8s.io/nodegroup: cordon-test-subject
-      taints: []
-      instanceType: t4g.medium
-      sshKeyName: kubeaid-demo
-      ami:
-        id: ami-0c4219b11327ef260
-      rootVolumeSize: 35
