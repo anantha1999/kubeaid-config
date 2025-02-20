@@ -5,7 +5,7 @@ velero:
       AWS_CLUSTER_NAME: kubeaid-demo-aws
     backupStorageLocation:
       - name: default
-        bucket: kubeaid-demo-kubernetes-objects
+        bucket: kubeaid-demo-aws-kubernetes-objects
         config:
           region: us-east-1
         provider: aws
