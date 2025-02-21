@@ -23,5 +23,5 @@ velero:
         - mountPath: /target
           name: plugins
   podAnnotations:
-    iam.amazonaws.com/role: arn:aws:iam::762233771014:role/velero-kubeaid-demo-aws
+    iam.amazonaws.com/role: arn:aws:iam::762233771014:role/kubeaid-demo-aws/velero-kubeaid-demo-aws
     cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
