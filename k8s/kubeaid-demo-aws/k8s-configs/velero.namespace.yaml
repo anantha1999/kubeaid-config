@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   annotations:
     iam.amazonaws.com/allowed-roles: |
-      ["arn:aws:iam::762233771014:role/velero-kubeaid-demo-aws"]
+      ["arn:aws:iam::762233771014:role/kubeaid-demo-aws/velero-kubeaid-demo-aws"]
   name: velero
 spec:	
   finalizers:	
