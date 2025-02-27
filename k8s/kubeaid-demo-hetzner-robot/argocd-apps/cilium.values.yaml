@@ -1,4 +1,1 @@
 
-cilium:
-  k8sServiceHost: 138.199.128.148
-  k8sServicePort: 6443
