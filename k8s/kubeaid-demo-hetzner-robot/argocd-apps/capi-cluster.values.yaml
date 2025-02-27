@@ -12,6 +12,7 @@ provider:
   hetzner: true
 
 hetzner:
+  hcloudSSHKeyName: cluster
   robot:
     controlPlane: 
       endpoint:
