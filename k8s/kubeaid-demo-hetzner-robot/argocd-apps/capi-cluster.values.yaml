@@ -6,14 +6,15 @@ global:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
     repo: https://github.com/Archisman-Mridha/kubeaid-config
-  additionalUsers: []
+  additionalUsers: 
+    []
 provider:
   hetzner: true
 
 hetzner:
   hcloudSSHKeyName: kubeaid-demo
   robot:
-    controlPlane:
+    controlPlane: 
       endpoint:
         host: 65.108.24.157
         port: 6443
@@ -33,5 +34,5 @@ hetzner:
           wwn:
             - "0x50014ee2097c6ca4"
             - "0x50014ee2097c9304"
-    # nodeGroups:
-    #   []
+    nodeGroups: 
+      []
