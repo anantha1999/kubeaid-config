@@ -1,4 +1,1 @@
 
-cilium:
-  k8sServiceHost: a49xn9w1oxng0yffel30xxmyvs9x-k8s-23abce86c9dc980f.elb.us-east-1.amazonaws.com
-  k8sServicePort: 6443
