@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   labels:
-    kubeaid.io/version: "HEAD"
+    kubeaid.io/version: "10.0.0"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
   name: cilium
@@ -15,7 +15,7 @@ spec:
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
       path: argocd-helm-charts/cilium
-      targetRevision: HEAD
+      targetRevision: 10.0.0
       helm:
         valueFiles:
           - $values/k8s/kubeaid-demo-aws/argocd-apps/cilium.values.yaml
