@@ -16,7 +16,7 @@ hetzner:
   hcloudSSHKeyName: kubeaid-demo
   robot:
     enabled: true
-    rescueSSHKeysSecretsName: kubeaid-demo-hetzner-robot-robot-rescue-ssh-keys
+    rescueSSHKeysSecretsName: kubeaid-demo-hetzner-robot-rescue-ssh-keys
     controlPlane: 
       endpoint:
         host: 65.108.24.157
