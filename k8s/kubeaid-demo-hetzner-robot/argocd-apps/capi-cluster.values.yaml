@@ -13,6 +13,7 @@ provider:
 
 hetzner:
   hcloudSSHKeyName: kubeaid-demo
+  hcloudSSHKeySecretName: hcloud-ssh-key
   robot:
     enabled: true
     rescueSSHKeysSecretsName: kubeaid-demo-hetzner-robot-robot-rescue-ssh-keys
