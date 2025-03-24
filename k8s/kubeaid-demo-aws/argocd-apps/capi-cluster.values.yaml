@@ -72,30 +72,30 @@ aws:
                   - "RequestReceived"
   nodeGroups: 
     - name: primary
-      minSize: 1
-      maxSize: 3
       cpu: 2
       memory: 4096
+      minSize: 1
+      maxSize: 3
       labels:
         node-role.kubernetes.io/bootstrapper: ""
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
-      instanceType: t4g.medium
-      sshKeyName: kubeaid-demo
       ami:
         id: ami-0c4219b11327ef260
+      instanceType: t4g.medium
       rootVolumeSize: 35
+      sshKeyName: kubeaid-demo
     - name: secondary
-      minSize: 0
-      maxSize: 1
       cpu: 2
       memory: 4096
+      minSize: 0
+      maxSize: 1
       labels:
         node-role.kubernetes.io/scale-to-zero-test-subject: ""
         node.cluster.x-k8s.io/nodegroup: scale-to-zero-test-subject
       taints: []
-      instanceType: t4g.medium
-      sshKeyName: kubeaid-demo
       ami:
         id: ami-0c4219b11327ef260
+      instanceType: t4g.medium
       rootVolumeSize: 35
+      sshKeyName: kubeaid-demo
