@@ -47,8 +47,7 @@ spec:
     # We are preventing the "argocd.argoproj.io/instance: argocd" label to be considered during
     # checksum calculation. So there will be no checksum change (and thus Pod restarts) when we
     # sync the argocd ArgoCD App.
-    - group: "*"
-      kind: "*"
+    - kind: "*"
       namespace: argocd
       jqPathExpressions:
         - '.metadata.labels."argocd.argoproj.io/instance"'
