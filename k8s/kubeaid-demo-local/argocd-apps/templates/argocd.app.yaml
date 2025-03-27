@@ -33,8 +33,9 @@ spec:
   # Will ignore differences between live and desired states during the diff.
   # NOTE : these configurations are not used during the sync process unless the
   #        RespectIgnoreDifferences=true sync option is enabled.
-  - group: "*"
-    kind: "*"
-    namespace: argocd
-    jsonPointers:
-      - /metadata/labels/argocd.argoproj.io/instance
+  ignoreDifferences:
+    - group: "*"
+      kind: "*"
+      namespace: argocd
+      jsonPointers:
+        - /metadata/labels/argocd.argoproj.io/instance
