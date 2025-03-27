@@ -18,7 +18,23 @@ spec:
     - repoURL: https://github.com/Obmondo/KubeAid
       path: argocd-helm-charts/argo-cd
       targetRevision: 10.0.0
+      helm:
+        valueFiles:
+          - $values/k8s/kubeaid-demo-local/argocd-apps/argocd.values.yaml
+    - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
       - CreateNamespace=true
+      RespectIgnoreDifferences=true # When syncing changes, respect fields ignored by the
+                                    # ignoreDifferences configuration.
+  # Will ignore differences between live and desired states during the diff.
+  # NOTE : these configurations are not used during the sync process unless the
+  #        RespectIgnoreDifferences=true sync option is enabled.
+  - group: "*"
+    kind: "*"
+    namespace: argocd
+    jsonPointers:
+      - /metadata/labels/argocd.argoproj.io/instance
