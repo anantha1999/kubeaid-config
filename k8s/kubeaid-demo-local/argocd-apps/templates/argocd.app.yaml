@@ -18,12 +18,6 @@ spec:
     - repoURL: https://github.com/Obmondo/KubeAid
       path: argocd-helm-charts/argo-cd
       targetRevision: 10.0.0
-      helm:
-        valueFiles:
-          - $values/k8s/kubeaid-demo-local/argocd-apps/argocd.values.yaml
-    - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
-      targetRevision: HEAD
-      ref: values
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
