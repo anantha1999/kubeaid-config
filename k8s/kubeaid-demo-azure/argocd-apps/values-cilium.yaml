@@ -1,1 +1,4 @@
 
+cilium:
+  k8sServiceHost: 
+  k8sServicePort: 0
