@@ -24,7 +24,7 @@ azure:
 
   controlPlane: 
     loadBalancerType: Public
-    diskSizeGB: 120
+    diskSizeGB: 128
     vmSize: Standard_B2s
     replicas: 3
 

@@ -1,4 +1,1 @@
-cluster-api-operator:
-  configSecret:
-    name: cloud-credentials
-    namespace: capi-cluster
+---
