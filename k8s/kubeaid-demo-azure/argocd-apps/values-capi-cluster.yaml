@@ -22,13 +22,13 @@ azure:
 
   userAssignedIdentity:
     name: kubeaid-demo-azure
-    clientID: 5addf3f1-6088-4db1-8d5b-af32f23368b1
+    clientID: 1393f2cb-dc93-4a94-b35a-4d028ca19f53
 
   controlPlane: 
     loadBalancerType: Public
     diskSizeGB: 128
     vmSize: Standard_B2s
-    replicas: 3
+    replicas: 1
 
   nodeGroups: 
     - name: primary
