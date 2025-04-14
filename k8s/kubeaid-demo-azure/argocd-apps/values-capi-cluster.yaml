@@ -22,7 +22,7 @@ azure:
 
   userAssignedIdentity:
     name: kubeaid-demo-azure
-    clientID: f3f52fd2-df6f-4bf2-9b34-68cc7566b731
+    clientID: 81de80da-d6d0-4013-80c3-804439920629
 
   controlPlane: 
     loadBalancerType: Public
