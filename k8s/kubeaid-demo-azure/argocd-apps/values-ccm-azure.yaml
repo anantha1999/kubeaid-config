@@ -1,3 +1,0 @@
-cloud-provider-azure:
-  infra:
-    clusterName: kubeaid-demo-azure
