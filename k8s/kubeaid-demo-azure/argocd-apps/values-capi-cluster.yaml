@@ -25,7 +25,8 @@ azure:
     clientID: 954cbbac-64f4-4477-9345-d779fd0d2bc7
 
   serviceAccountSigner:
-    publicKey: -----BEGIN PUBLIC KEY-----
+    publicKey: |
+      -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAta4NHckHGVHOFgUUUdZJ
 9FemTVcnCdLdMV+9fkx45WW24vJwv8IAhxVtNYbgcOpJ17EiiJhwqrtg49PAzGRF
 uLSCaoU09xs/J/xpnKIzBFV2nAb32/RjDMYKNmnOUoQZcF/zlQWjSUiXRKuVsWfj
@@ -35,7 +36,8 @@ osTGheR5xM/ra9nXTeBitWVtFoah1iYRZh4j4dxqnpr1H0SimE+GBuEtCpVdZF70
 2QIDAQAB
 -----END PUBLIC KEY-----
 
-    privateKey: -----BEGIN PRIVATE KEY-----
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1rg0dyQcZUc4W
 BRRR1kn0V6ZNVycJ0t0xX71+THjlZbbi8nC/wgCHFW01huBw6knXsSKImHCqu2Dj
 08DMZEW4tIJqhTT3Gz8n/GmcojMEVXacBvfb9GMMxgo2ac5ShBlwX/OVBaNJSJdE
