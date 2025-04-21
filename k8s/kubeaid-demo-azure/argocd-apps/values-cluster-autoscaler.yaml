@@ -23,4 +23,4 @@ cluster-autoscaler:
     namespace: capi-cluster
 
 enableClusterAPIScaleFromZeroSupport:
-  aws: true
+  azure: true
