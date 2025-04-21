@@ -62,6 +62,7 @@ cilium:
   # Each individual node is made aware of all pod IPs of all other nodes and routes are
   # inserted into the Linux Kernel routing table to represent this.
   autoDirectNodeRoutes: true
+  directRoutingSkipUnreachable: true
 
   bpf:
     # IPv4 addresses used for pods are typically allocated from RFC1918 private address blocks
