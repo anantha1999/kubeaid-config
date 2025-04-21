@@ -26,7 +26,6 @@ azure:
 
   serviceAccountSigner:
     publicKey: |
-
       -----BEGIN PUBLIC KEY-----
       MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAta4NHckHGVHOFgUUUdZJ
       9FemTVcnCdLdMV+9fkx45WW24vJwv8IAhxVtNYbgcOpJ17EiiJhwqrtg49PAzGRF
@@ -38,7 +37,6 @@ azure:
       -----END PUBLIC KEY-----
       
     privateKey: |
-
       -----BEGIN PRIVATE KEY-----
       MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1rg0dyQcZUc4W
       BRRR1kn0V6ZNVycJ0t0xX71+THjlZbbi8nC/wgCHFW01huBw6knXsSKImHCqu2Dj
