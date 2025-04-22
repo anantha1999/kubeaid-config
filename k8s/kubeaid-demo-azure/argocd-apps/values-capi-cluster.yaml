@@ -22,7 +22,7 @@ azure:
 
   userAssignedIdentity:
     name: kubeaid-demo-azure
-    clientID: 18a16879-4ebf-4335-b856-30cf8d917317
+    clientID: c070d573-d79a-44ed-9863-6fda062c8cb6
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
