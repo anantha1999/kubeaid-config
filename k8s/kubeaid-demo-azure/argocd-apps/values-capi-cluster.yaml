@@ -1,7 +1,7 @@
 global:
   clusterName: kubeaid-demo-azure
   kubernetes:
-    version: v1.32.0
+    version: v1.31.1
   kubeaid:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
@@ -22,7 +22,7 @@ azure:
 
   userAssignedIdentity:
     name: kubeaid-demo-azure
-    clientID: 209132fa-c407-407b-8c0e-415b3d71b324
+    clientID: 6db71b73-7bad-4962-ad5e-675687766fae
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
