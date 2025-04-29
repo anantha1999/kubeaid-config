@@ -27,12 +27,15 @@ spec:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
   ignoreDifferences:
-    - group: ""
-      kind: Secret
+    - kind: Secret
       name: cilium-ca
-    - group: ""
-      kind: Secret
+      jsonPointers:
+        - /data
+    - kind: Secret
       name: hubble-server-certs
-    - group: ""
-      kind: Secret
+      jsonPointers:
+        - /data
+    - kind: Secret
       name: hubble-relay-client-certs
+      jsonPointers:
+        - /data
