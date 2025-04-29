@@ -26,3 +26,13 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
+  ignoreDifferences:
+    - group: ""
+      kind: Secret
+      name: cilium-ca
+    - group: ""
+      kind: Secret
+      name: hubble-server-certs
+    - group: ""
+      kind: Secret
+      name: hubble-relay-client-certs
