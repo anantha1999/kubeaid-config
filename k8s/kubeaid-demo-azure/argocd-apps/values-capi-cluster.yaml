@@ -21,8 +21,8 @@ azure:
   sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCMB0BJ1vL53/xiDCfswJWOrBYc39MbnmMnAK9ATohDqgT1ZrvLODbw5T1NTOLsVyuWNXMB9HfPPXg3Qm5L5UXoIj5JeyIY1ArUxjdW5LI4fsYgYHfRSv3gSZFpuJj12+myBxdoNYCDNDrzYF5T3D2is0lqcSG+3UerkY7ox8WuHMSO69bUAn72ugw01TgycdXpX5jvGLb84yl2Xct1/YFsh9UKhVYWx8qdz5r7FM4h5KDIIi2yjAEjwm4DfYKT/9dlzTodzeim4Z755AGXpFWjlQYaV8vNLHhIkDEtDOZTDtePFwQ64cw1e8cYzuRqDRxCVA9mWQtWwbMgklAv5h0ZTu8cJ9XcomQV9W2NCieBJyu+bj71AKFg3qTD9aMBq2zBXshoZwvmPlrIfAreALPEcPQvn6T8vHGvfk6Pf91B7I1Tu9ds0X0Vp5KELR6wwZQx2JKwMJillzC4Z3GY4/oi5J5C6WnlB3TxCvsivBo3TtEc3phylnfHNvRbwCqch2k= robot-webservice-app-user
 
   userAssignedIdentity:
-    name: kubeaid-demo-azure
-    clientID: c285fd50-e9fd-41d3-af41-1e50f83d95e2
+    name: cluster-api
+    clientID: 3bd51ca9-5565-4096-b93b-d2511349b024
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
