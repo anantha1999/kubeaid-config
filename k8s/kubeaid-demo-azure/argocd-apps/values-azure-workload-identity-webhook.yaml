@@ -1,1 +1,2 @@
----
+workload-identity-webhook:
+  azureTenantID: 044f8a56-5941-491f-9618-310d92b5a3dd
