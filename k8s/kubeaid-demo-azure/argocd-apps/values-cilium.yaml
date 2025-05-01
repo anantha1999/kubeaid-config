@@ -1,1 +1,5 @@
 
+cilium:
+  kubeProxyReplacement: true
+  k8sServiceHost: 
+  k8sServicePort: 0
