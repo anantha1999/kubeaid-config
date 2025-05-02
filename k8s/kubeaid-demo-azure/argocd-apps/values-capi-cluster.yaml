@@ -22,7 +22,7 @@ azure:
 
   userAssignedIdentity:
     name: cluster-api
-    clientID: 17a2ae58-81e6-4bac-adb6-9240630b0860
+    clientID: a989b181-2ca9-42d9-b69f-42497a135265
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
