@@ -4,7 +4,7 @@ velero:
     backupStorageLocation:
       - name: default
         provider: azure
-        bucket: kubeaiddemobackups
+        bucket: velero-backups
         config:
           useAAD: true
           resourceGroup: kubeaid-demo-azure
@@ -19,7 +19,7 @@ velero:
       create: true
       name: velero
       annotations:
-        azure.workload.identity/client-id: 2ab1c1ff-20e9-4f38-a43f-e27bee35aaad
+        azure.workload.identity/client-id: 7984cdc8-8390-4fef-9b68-eab0afb4b340
   rbac:
     create: true
     clusterAdministrator: true
