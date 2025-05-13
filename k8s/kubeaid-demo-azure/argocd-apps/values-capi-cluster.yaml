@@ -26,11 +26,10 @@ azure:
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
-  computeGalleryImage: 
-    resourceGroup: kubeaid-demo-azure
-    gallery: capiimages
-    name: capi-ubuntu-2404-arm64-gen2
-    version: 1.32.0
+
+  
+  imageID: /subscriptions/c4508db5-f783-4ac1-9221-1116c3a6db47/resourceGroups/kubeaid-demo-azure/providers/Microsoft.Compute/galleries/capiimages/images/capi-ubuntu-2404-arm64-gen2/versions/1.32.0
+  
 
   controlPlane: 
     loadBalancerType: Public
