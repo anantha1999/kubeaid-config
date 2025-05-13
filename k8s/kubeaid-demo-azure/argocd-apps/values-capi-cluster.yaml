@@ -1,7 +1,7 @@
 global:
   clusterName: kubeaid-demo-azure
   kubernetes:
-    version: v1.31.1
+    version: v1.32.0
   kubeaid:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
@@ -40,12 +40,12 @@ azure:
   nodeGroups: 
     - name: primary
       cpu: 2
-      memory: 4096
+      memory: 8192
       minSize: 1
       maxSize: 3
       labels:
         node-role.kubernetes.io/bootstrapper: ""
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
-      vmSize: Standard_B2s
+      vmSize: Standard_D2ps_v6
       diskSizeGB: 128
