@@ -1,5 +1,4 @@
-
 cilium:
   kubeProxyReplacement: true
   k8sServiceHost: kubeaid-demo-azure-93f2db84.northcentralus.cloudapp.azure.com
-  k8sServicePort: 6443
+  k8sServicePort: '6443'
