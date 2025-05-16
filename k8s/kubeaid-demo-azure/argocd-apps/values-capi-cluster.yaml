@@ -1,7 +1,7 @@
 global:
   clusterName: kubeaid-demo-azure
   kubernetes:
-    version: v1.32.0
+    version: v1.31.1
   kubeaid:
     repo: https://github.com/Archisman-Mridha/kubeaid
   kubeaidConfig:
@@ -27,25 +27,21 @@ azure:
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
 
-  
-  imageID: /subscriptions/c4508db5-f783-4ac1-9221-1116c3a6db47/resourceGroups/kubeaid-demo-azure/providers/Microsoft.Compute/galleries/capiimages/images/capi-ubuntu-2404-arm64-gen2/versions/1.32.0
-  
-
   controlPlane: 
     loadBalancerType: Public
     diskSizeGB: 128
-    vmSize: Standard_D2ps_v6
+    vmSize: Standard_B2s
     replicas: 1
 
   nodeGroups: 
     - name: primary
       cpu: 2
-      memory: 8192
+      memory: 4096
       minSize: 1
       maxSize: 3
       labels:
         node-role.kubernetes.io/bootstrapper: ""
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
-      vmSize: Standard_D2ps_v6
+      vmSize: Standard_B2s
       diskSizeGB: 128
