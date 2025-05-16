@@ -5,19 +5,22 @@ metadata:
     kubeaid.io/version: "12.0.0"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: root
+  name: kube-prometheus
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: monitoring
   project: kubeaid
   source:
-    path: k8s/kubeaid-demo-local/argocd-apps
+    path: k8s/kubeaid-demo-local/kube-prometheus
     repoURL: https://github.com/Archisman-Mridha/kubeaid-config
     targetRevision: HEAD
+    directory:
+      recurse: true
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
