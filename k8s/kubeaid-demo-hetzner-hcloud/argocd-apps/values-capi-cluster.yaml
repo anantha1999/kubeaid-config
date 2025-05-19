@@ -18,7 +18,7 @@ hetzner:
   zone: eu-central
   region: hel1
 
-  hcloudSSHKeyPairName: cluster
+  hcloudSSHKeyPairName: kubeaid-demo
 
   network:
     enabled: true
