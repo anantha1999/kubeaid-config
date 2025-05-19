@@ -31,3 +31,8 @@ spec:
       kind: MachineDeployment
       jsonPointers:
         - /spec/replicas
+    
+    - group: infrastructure.cluster.x-k8s.io/v1beta1
+      kind: HetznerCluster
+      jsonPointers:
+        - /spec/controlPlaneEndpoint/host
