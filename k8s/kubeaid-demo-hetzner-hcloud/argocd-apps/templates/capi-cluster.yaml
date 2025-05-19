@@ -27,12 +27,12 @@ spec:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
   ignoreDifferences:
-    - group: cluster.x-k8s.io/v1beta1
+    - group: cluster.x-k8s.io
       kind: MachineDeployment
       jsonPointers:
         - /spec/replicas
     
-    - group: infrastructure.cluster.x-k8s.io/v1beta1
+    - group: infrastructure.cluster.x-k8s.io
       kind: HetznerCluster
       jsonPointers:
         - /spec/controlPlaneEndpoint/host
