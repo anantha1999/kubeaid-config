@@ -48,3 +48,4 @@ hetzner:
           node.cluster.x-k8s.io/nodegroup: bootstrapper
         taints: []
         machineType: cax11
+        rootvolumesize: 40
