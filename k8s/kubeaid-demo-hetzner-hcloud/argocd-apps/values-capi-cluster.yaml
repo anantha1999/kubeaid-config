@@ -41,8 +41,8 @@ hetzner:
       - name: bootstrapper
         cpu: 2
         memory: 4096
-        minSize: 0
-        maxSize: 0
+        minSize: 1
+        maxSize: 3
         labels:
           node-role.kubernetes.io/bootstrapper: ""
           node.cluster.x-k8s.io/nodegroup: bootstrapper
