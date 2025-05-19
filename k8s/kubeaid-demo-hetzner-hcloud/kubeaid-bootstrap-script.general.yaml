@@ -39,6 +39,8 @@ cloud:
       hcloud:
         - name: bootstrapper
           machineType: cax11
+          minSize: 1
+          maxSize: 3
           labels:
             node-role.kubernetes.io/bootstrapper: ""
             node.cluster.x-k8s.io/nodegroup: bootstrapper
