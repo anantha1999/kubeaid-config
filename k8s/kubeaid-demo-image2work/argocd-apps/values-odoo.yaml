@@ -3,6 +3,8 @@ odoo:
   postgresql:
     enabled: false
   
+  replicaCount: 3
+
   externalDatabase:
     host: odoo-pgsql-rw
     port: 5432
