@@ -3,7 +3,7 @@ odoo:
   postgresql:
     enabled: false
 
-  replicaCount: 3
+  replicaCount: 1
 
   externalDatabase:
     host: odoo-pgsql-rw
