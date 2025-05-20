@@ -5,7 +5,7 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: ccm-hetzner
+  name: hcloud-cloud-controller-manager
   namespace: argocd
 spec:
   destination:
@@ -14,11 +14,11 @@ spec:
   project: kubeaid
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
-      path: argocd-helm-charts/ccm-hetzner
+      path: argocd-helm-charts/hcloud-cloud-controller-manager
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-image2work/argocd-apps/values-ccm-hetzner.yaml
+          - $values/k8s/kubeaid-demo-image2work/argocd-apps/values-hcloud-cloud-controller-manager.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
