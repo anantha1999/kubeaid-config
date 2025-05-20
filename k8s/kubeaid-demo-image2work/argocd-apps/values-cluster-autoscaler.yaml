@@ -23,3 +23,4 @@ cluster-autoscaler:
     namespace: capi-cluster
 
 enableClusterAPIScaleFromZeroSupport:
+  hcloud: true
