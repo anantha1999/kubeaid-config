@@ -28,7 +28,12 @@ odoo:
   
   ingress:
     enabled: false
-  
+
+  tolerations:
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
+      effect: "NoSchedule"
+
 postgres:
   size: 4Gi
   recover: false
