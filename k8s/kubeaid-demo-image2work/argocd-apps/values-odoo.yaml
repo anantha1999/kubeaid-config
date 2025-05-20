@@ -20,9 +20,11 @@ odoo:
     size: 8Gi
   
   service:
-    type: ClusterIP
+    type: NodePort
     ports:
       http: 80
+    nodePorts:
+      http: 30080
   
   ingress:
     enabled: false
