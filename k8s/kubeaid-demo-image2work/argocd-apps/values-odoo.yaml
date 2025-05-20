@@ -1,1 +1,43 @@
 ---
+odoo:
+  postgresql:
+    enabled: false
+  
+  externalDatabase:
+    host: odoo-pgsql-rw
+    port: 5432
+    user: odoo
+    database: odoo
+    create: false
+    existingSecret: "odoo-pgsql-app"
+    existingSecretPasswordKey: "password"
+  
+  odooEmail: admin@image2work.com
+  allowEmptyPassword: false
+  
+  persistence:
+    enabled: true
+    size: 8Gi
+  
+  service:
+    type: NodePort
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+        nodePort: 30080
+ 
+  ingress:
+    enabled: false
+  
+postgres:
+  size: 4Gi
+  recover: false
+  pass: odoo-pgsql-app
+  resources:
+    limits:
+      memory: 1000Mi
+      cpu: 500Mi
+    requests:
+      memory: 500Mi
+      cpu: 250m
