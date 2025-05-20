@@ -22,11 +22,9 @@ odoo:
     size: 8Gi
   
   service:
-    type: NodePort
+    type: LoadBalancer
     ports:
       http: 80
-    nodePorts:
-      http: 30080
   
   ingress:
     enabled: false
