@@ -2,7 +2,7 @@
 odoo:
   postgresql:
     enabled: false
-  
+
   replicaCount: 3
 
   externalDatabase:
@@ -13,19 +13,21 @@ odoo:
     create: false
     existingSecret: "odoo-pgsql-app"
     existingSecretPasswordKey: "password"
-  
+
   odooEmail: admin@image2work.com
   allowEmptyPassword: false
-  
+
   persistence:
     enabled: true
     size: 8Gi
-  
+
   service:
     type: LoadBalancer
+    annotations:
+      load-balancer.hetzner.cloud/network-zone: eu-central
     ports:
       http: 80
-  
+
   ingress:
     enabled: false
 
