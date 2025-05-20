@@ -1,5 +1,7 @@
----
-secret:
-  name: cloud-credentials
-  privateNetwork:
-    enabled: false
+ccm-hetzner:
+  env:
+    HCLOUD_TOKEN:
+      valueFrom:
+        secretKeyRef:
+          name: cloud-credentials
+          key: hcloud
