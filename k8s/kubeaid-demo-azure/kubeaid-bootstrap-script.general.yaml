@@ -1,0 +1,66 @@
+forkURLs:
+  kubeaid: https://github.com/Archisman-Mridha/kubeaid
+  kubeaidConfig: https://github.com/Archisman-Mridha/kubeaid-config
+
+cluster:
+  name: kubeaid-demo-azure
+  k8sVersion: v1.31.1
+  kubeaidVersion: HEAD
+  enableAuditLogging: true
+  additionalUsers:
+    - name: archi
+      sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCMB0BJ1vL53/xiDCfswJWOrBYc39MbnmMnAK9ATohDqgT1ZrvLODbw5T1NTOLsVyuWNXMB9HfPPXg3Qm5L5UXoIj5JeyIY1ArUxjdW5LI4fsYgYHfRSv3gSZFpuJj12+myBxdoNYCDNDrzYF5T3D2is0lqcSG+3UerkY7ox8WuHMSO69bUAn72ugw01TgycdXpX5jvGLb84yl2Xct1/YFsh9UKhVYWx8qdz5r7FM4h5KDIIi2yjAEjwm4DfYKT/9dlzTodzeim4Z755AGXpFWjlQYaV8vNLHhIkDEtDOZTDtePFwQ64cw1e8cYzuRqDRxCVA9mWQtWwbMgklAv5h0ZTu8cJ9XcomQV9W2NCieBJyu+bj71AKFg3qTD9aMBq2zBXshoZwvmPlrIfAreALPEcPQvn6T8vHGvfk6Pf91B7I1Tu9ds0X0Vp5KELR6wwZQx2JKwMJillzC4Z3GY4/oi5J5C6WnlB3TxCvsivBo3TtEc3phylnfHNvRbwCqch2k= robot-webservice-app-user
+
+cloud:
+  azure:
+    tenantID: 044f8a56-5941-491f-9618-310d92b5a3dd
+    subscriptionID: c4508db5-f783-4ac1-9221-1116c3a6db47
+    aadApplication:
+      name: kubeaid-demo
+      objectID: 83caa299-851c-4442-86d8-98c314d9cda7
+      servicePrincipalID: 40d93878-d4b8-4ce2-83a8-7a00f3cf6583
+    location: northcentralus
+
+    # Storage account name must be between 3 and 24 characters in length and use numbers and
+    # lower-case letters only.
+    storageAccount: kubeaiddemo
+
+    workloadIdentity:
+      openIDProviderSSHKeyPair:
+        publicKeyFilePath: ./outputs/ssh/rsa/pem/.pub
+        privateKeyFilePath: ./outputs/ssh/rsa/pem/.key
+
+    sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCMB0BJ1vL53/xiDCfswJWOrBYc39MbnmMnAK9ATohDqgT1ZrvLODbw5T1NTOLsVyuWNXMB9HfPPXg3Qm5L5UXoIj5JeyIY1ArUxjdW5LI4fsYgYHfRSv3gSZFpuJj12+myBxdoNYCDNDrzYF5T3D2is0lqcSG+3UerkY7ox8WuHMSO69bUAn72ugw01TgycdXpX5jvGLb84yl2Xct1/YFsh9UKhVYWx8qdz5r7FM4h5KDIIi2yjAEjwm4DfYKT/9dlzTodzeim4Z755AGXpFWjlQYaV8vNLHhIkDEtDOZTDtePFwQ64cw1e8cYzuRqDRxCVA9mWQtWwbMgklAv5h0ZTu8cJ9XcomQV9W2NCieBJyu+bj71AKFg3qTD9aMBq2zBXshoZwvmPlrIfAreALPEcPQvn6T8vHGvfk6Pf91B7I1Tu9ds0X0Vp5KELR6wwZQx2JKwMJillzC4Z3GY4/oi5J5C6WnlB3TxCvsivBo3TtEc3phylnfHNvRbwCqch2k= robot-webservice-app-user
+
+    controlPlane:
+      loadBalancerType: Public
+      vmSize: Standard_B2s
+      diskSizeGB: 128
+      replicas: 1
+
+    nodeGroups:
+      - name: primary
+
+        vmSize: Standard_B2s
+        diskSizeGB: 128
+
+        minSize: 1
+        maxSize: 3
+
+        # Label should meet one of the following criterias to propagate to Node :
+        #
+        # (1) Has node-role.kubernetes.io as prefix.
+        # (2) Belongs to node-restriction.kubernetes.io domain.
+        # (3) Belongs to node.cluster.x-k8s.io domain.
+        #
+        # REFER : https://cluster-api.sigs.k8s.io/developer/architecture/controllers/metadata-propagation#machine
+        labels:
+          node.cluster.x-k8s.io/nodegroup: bootstrapper
+          node-role.kubernetes.io/bootstrapper: ""
+
+        taints: []
+
+  disasterRecovery:
+    veleroBackupsBucketName: velero-backups
+    sealedSecretsBackupsBucketName: sealed-secrets-backups
+

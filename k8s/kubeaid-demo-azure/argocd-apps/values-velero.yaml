@@ -14,13 +14,12 @@ velero:
         provider: azure
         config:
           resourceGroup: kubeaid-demo-azure
-    features: EnableCSI
   serviceAccount:
     server:
       create: true
       name: velero
       annotations:
-        azure.workload.identity/client-id: 7984cdc8-8390-4fef-9b68-eab0afb4b340
+        azure.workload.identity/client-id: a5c8c2dc-7861-4671-a3c9-df14af7f97bd
   rbac:
     create: true
     clusterAdministrator: true

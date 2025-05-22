@@ -22,10 +22,12 @@ azure:
 
   userAssignedIdentity:
     name: cluster-api
-    clientID: 5c3a1422-4ca7-4e11-8253-9966c9dac6b4
+    clientID: c838074d-c5e9-498b-80de-b8f5807bb939
 
   serviceAccountIssuer:
-    url: https://kubeaiddemo.blob.core.windows.net/workload-identity-oidc-provider
+    url: https://kubeaiddemo.blob.core.windows.net/oidc-provider
+
+  
 
   controlPlane: 
     loadBalancerType: Public
@@ -36,7 +38,7 @@ azure:
   nodeGroups: 
     - name: primary
       cpu: 2
-      memory: 4096
+      memory: 4
       minSize: 1
       maxSize: 3
       labels:

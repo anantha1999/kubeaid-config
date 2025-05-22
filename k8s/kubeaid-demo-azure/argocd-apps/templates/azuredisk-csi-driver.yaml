@@ -11,7 +11,6 @@ spec:
   destination:
     namespace: kube-system
     server: https://kubernetes.default.svc
-  project: kubeaid
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
       path: argocd-helm-charts/azuredisk-csi-driver
@@ -22,7 +21,7 @@ spec:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
+  project: kubeaid
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
-
