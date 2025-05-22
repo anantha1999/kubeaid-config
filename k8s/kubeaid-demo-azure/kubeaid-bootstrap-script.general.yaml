@@ -34,14 +34,14 @@ cloud:
 
     controlPlane:
       loadBalancerType: Public
-      vmSize: Standard_B2s
+      vmSize: Standard_D2ps_v6
       diskSizeGB: 128
       replicas: 1
 
     nodeGroups:
       - name: primary
 
-        vmSize: Standard_B2s
+        vmSize: Standard_D2ps_v6
         diskSizeGB: 128
 
         minSize: 1

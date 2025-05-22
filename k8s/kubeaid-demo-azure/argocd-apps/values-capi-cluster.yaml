@@ -22,7 +22,7 @@ azure:
 
   userAssignedIdentity:
     name: cluster-api
-    clientID: c838074d-c5e9-498b-80de-b8f5807bb939
+    clientID: 150ede7e-60d4-4fff-9984-ad82e7f860ae
 
   serviceAccountIssuer:
     url: https://kubeaiddemo.blob.core.windows.net/oidc-provider
@@ -32,18 +32,18 @@ azure:
   controlPlane: 
     loadBalancerType: Public
     diskSizeGB: 128
-    vmSize: Standard_B2s
+    vmSize: Standard_D2ps_v6
     replicas: 1
 
   nodeGroups: 
     - name: primary
       cpu: 2
-      memory: 4
+      memory: 8
       minSize: 1
       maxSize: 3
       labels:
         node-role.kubernetes.io/bootstrapper: ""
         node.cluster.x-k8s.io/nodegroup: bootstrapper
       taints: []
-      vmSize: Standard_B2s
+      vmSize: Standard_D2ps_v6
       diskSizeGB: 128
