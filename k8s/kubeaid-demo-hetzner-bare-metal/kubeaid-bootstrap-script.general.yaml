@@ -22,8 +22,8 @@ cloud:
 
     rescueHCloudSSHKeyPair:
       name: kubeaid-demo-rescue
-      publicKeyFilePath: ./outputs/ssh/rsa/openssh/.pub
-      privateKeyFilePath: ./outputs/ssh/rsa/openssh/.key
+      publicKeyFilePath: ./outputs/ssh/rsa/openssh/hetzner-robot-rescue/.pub
+      privateKeyFilePath: ./outputs/ssh/rsa/openssh/hetzner-robot-rescue/.key
 
     networkEnabled: true
 
