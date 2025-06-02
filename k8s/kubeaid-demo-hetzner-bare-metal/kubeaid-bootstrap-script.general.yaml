@@ -21,9 +21,9 @@ cloud:
     hcloudSSHKeyPairName: cluster
 
     rescueHCloudSSHKeyPair:
-      name: kubeaid-demo-rescue
-      publicKeyFilePath: ./outputs/ssh/rsa/openssh/hetzner-robot-rescue/.pub
-      privateKeyFilePath: ./outputs/ssh/rsa/openssh/hetzner-robot-rescue/.key
+      name: cluster
+      publicKeyFilePath: ./outputs/ssh/rsa/openssh/.pub
+      privateKeyFilePath: ./outputs/ssh/rsa/openssh/.key
 
     networkEnabled: true
 
@@ -32,7 +32,7 @@ cloud:
     controlPlane:
       bareMetal:
         bareMetalHosts:
-          - serverID: "1866472"
+          - serverID: 1866472
             wwns:
               - "0x50000397cb700acd"
               - "0x500003981be00179"
@@ -46,11 +46,11 @@ cloud:
       bareMetal:
         - name: bootstrapper
           bareMetalHosts:
-            - serverID: "1866482"
+            - serverID: 1866482
               wwns:
                 - "0x5000cca25ed86494"
                 - "0x5000cca25ecf496b"
-            - serverID: "1866484"
+            - serverID: 1866484
               wwns:
                 - "0x50014ee2097c6ca4"
                 - "0x50014ee2097c9304"
