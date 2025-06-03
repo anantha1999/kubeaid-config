@@ -16,7 +16,6 @@ hetzner:
   mode: bare-metal
 
   zone: eu-central
-  region: hel1
 
   hcloudSSHKeyPairName: cluster
 
