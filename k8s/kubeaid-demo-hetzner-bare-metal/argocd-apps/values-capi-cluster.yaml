@@ -27,10 +27,10 @@ hetzner:
   controlPlane:
     
     bareMetalHosts: 
-      - serverID: "1866472"
+      - serverID: "1866482"
         wwns:
-          - "0x50000397cb700acd"
-          - "0x500003981be00179"
+          - "0x5000cca25ed86494"
+          - "0x5000cca25ecf496b"
     endpoint:
       host: 65.108.24.157
 

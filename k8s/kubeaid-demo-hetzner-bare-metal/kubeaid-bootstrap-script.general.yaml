@@ -32,10 +32,14 @@ cloud:
     controlPlane:
       bareMetal:
         bareMetalHosts:
-          - serverID: 1866472
+          # - serverID: 1866472
+          #   wwns:
+          #     - "0x50000397cb700acd"
+          #     - "0x500003981be00179"
+          - serverID: 1866482
             wwns:
-              - "0x50000397cb700acd"
-              - "0x500003981be00179"
+              - "0x5000cca25ed86494"
+              - "0x5000cca25ecf496b"
         failoverIP: "65.108.24.157"
       regions:
         - fsn1
