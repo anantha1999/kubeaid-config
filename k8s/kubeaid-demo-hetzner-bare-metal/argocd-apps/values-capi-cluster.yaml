@@ -27,7 +27,8 @@ hetzner:
       - hel1
 
     
-    endpoint:
+    endpoint: 
+      isFailoverIP: true
       host: 65.108.24.157
     bareMetal:
       bareMetalHosts: 
