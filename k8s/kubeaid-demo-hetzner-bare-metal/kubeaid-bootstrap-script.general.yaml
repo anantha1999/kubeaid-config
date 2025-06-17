@@ -16,6 +16,7 @@ cloud:
     mode: bare-metal
 
     bareMetal:
+      wipeDisks: true
       sshKeyPair:
         name: cluster
         publicKeyFilePath: ./outputs/ssh/rsa/openssh/.pub
