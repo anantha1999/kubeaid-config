@@ -34,7 +34,9 @@ hetzner:
         host: 65.108.24.157
       bareMetalHosts:
         - serverID: "1866484"
-          wwn: []
+          wwns:
+            - "0x50014ee2097c6ca4"
+            - "0x50014ee2097c9304"
 
     
 
