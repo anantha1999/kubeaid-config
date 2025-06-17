@@ -39,4 +39,4 @@ spec:
     - group: infrastructure.cluster.x-k8s.io
       kind: HetznerBareMetalHost
       jsonPointers:
-        - /annotations/capi.syself.com~1wipe-disk
+        - /metadata/annotations/capi.syself.com~1wipe-disk
