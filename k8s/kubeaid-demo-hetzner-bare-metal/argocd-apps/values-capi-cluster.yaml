@@ -12,70 +12,31 @@ global:
 provider:
   hetzner: true
 
-hetzner: 
+hetzner:
   mode: bare-metal
-  hcloud: null
   bareMetal:
-    wipeDisks: true
-    imagePath: /root/.oldroot/nfs/images/Ubuntu-2404-noble-amd64-base.tar.gz
     sshKeyPair:
       name: cluster
-      privateKeyFilePath: ./outputs/ssh/rsa/openssh/.key
-      privatekey: |
-        -----BEGIN OPENSSH PRIVATE KEY-----
-        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
-        -----END OPENSSH PRIVATE KEY-----
-      publicKeyFilePath: ./outputs/ssh/rsa/openssh/.pub
-      publickey: |
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCMB0BJ1vL53/xiDCfswJWOrBYc39MbnmMnAK9ATohDqgT1ZrvLODbw5T1NTOLsVyuWNXMB9HfPPXg3Qm5L5UXoIj5JeyIY1ArUxjdW5LI4fsYgYHfRSv3gSZFpuJj12+myBxdoNYCDNDrzYF5T3D2is0lqcSG+3UerkY7ox8WuHMSO69bUAn72ugw01TgycdXpX5jvGLb84yl2Xct1/YFsh9UKhVYWx8qdz5r7FM4h5KDIIi2yjAEjwm4DfYKT/9dlzTodzeim4Z755AGXpFWjlQYaV8vNLHhIkDEtDOZTDtePFwQ64cw1e8cYzuRqDRxCVA9mWQtWwbMgklAv5h0ZTu8cJ9XcomQV9W2NCieBJyu+bj71AKFg3qTD9aMBq2zBXshoZwvmPlrIfAreALPEcPQvn6T8vHGvfk6Pf91B7I1Tu9ds0X0Vp5KELR6wwZQx2JKwMJillzC4Z3GY4/oi5J5C6WnlB3TxCvsivBo3TtEc3phylnfHNvRbwCqch2k= robot-webservice-app-user
+    installImage:
+      imagePath: /root/.oldroot/nfs/images/Ubuntu-2404-noble-amd64-base.tar.gz
+
   controlPlane:
-    hcloud: null
-    bareMetal:
+    regions: 
+      - fsn1
+      - nbg1
+      - hel1
+
+    
+    bareMetal: 
       endpoint:
         isFailoverIP: true
         host: 65.108.24.157
       bareMetalHosts:
         - serverID: "1866482"
           wwn: []
-    regions:
-      - fsn1
-      - nbg1
-      - hel1
-  nodeGroups:
+
+    
+
+  nodeGroups: 
     hcloud: []
     bareMetal: []
