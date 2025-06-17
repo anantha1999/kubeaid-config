@@ -32,10 +32,10 @@ cloud:
           isFailoverIP: true
           host: "65.108.24.157"
         bareMetalHosts:
-          - serverID: 1866482
+          - serverID: 1866484
             wwns:
-              - "0x5000cca25ed86494"
-              - "0x5000cca25ecf496b"
+              - "0x50014ee2097c6ca4"
+              - "0x50014ee2097c9304"
 
     # nodeGroups:
     #   bareMetal:
@@ -45,10 +45,10 @@ cloud:
     #           wwns:
     #             - "0x50000397cb700acd"
     #             - "0x500003981be00179"
-    #         - serverID: 1866484
+    #         - serverID: 1866482
     #           wwns:
-    #             - "0x50014ee2097c6ca4"
-    #             - "0x50014ee2097c9304"
+    #             - "0x5000cca25ed86494"
+    #             - "0x5000cca25ecf496b"
     #       labels:
     #         node-role.kubernetes.io/bootstrapper: ""
     #         node.cluster.x-k8s.io/nodegroup: bootstrapper
