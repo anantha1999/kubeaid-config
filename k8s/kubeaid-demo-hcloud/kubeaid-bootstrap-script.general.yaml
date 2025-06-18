@@ -3,7 +3,7 @@ forkURLs:
   kubeaidConfig: https://github.com/Archisman-Mridha/kubeaid-config
 
 cluster:
-  name: kubeaid-demo-hetzner-hcloud
+  name: kubeaid-demo-hcloud
   k8sVersion: v1.31.0
   kubeaidVersion: HEAD
   enableAuditLogging: true
@@ -45,4 +45,3 @@ cloud:
             node-role.kubernetes.io/bootstrapper: ""
             node.cluster.x-k8s.io/nodegroup: bootstrapper
           taints: []
-

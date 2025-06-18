@@ -17,7 +17,7 @@ spec:
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-hetzner-hcloud/argocd-apps/values-cluster-autoscaler.yaml
+          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-cluster-autoscaler.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values

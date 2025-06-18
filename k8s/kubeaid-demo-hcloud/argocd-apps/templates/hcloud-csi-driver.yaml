@@ -5,34 +5,23 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: capi-cluster
+  name: hcloud-csi-driver
   namespace: argocd
 spec:
   destination:
-    namespace: capi-cluster
+    namespace: kube-system
     server: https://kubernetes.default.svc
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
-      path: argocd-helm-charts/capi-cluster
+      path: argocd-helm-charts/hcloud-csi-driver
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-hetzner-hcloud/argocd-apps/values-capi-cluster.yaml
+          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-hcloud-csi-driver.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
   project: kubeaid
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
-  ignoreDifferences:
-    - group: cluster.x-k8s.io
-      kind: MachineDeployment
-      jsonPointers:
-        - /spec/replicas
-    
-    - group: infrastructure.cluster.x-k8s.io
-      kind: HetznerCluster
-      jsonPointers:
-        - /spec/controlPlaneEndpoint/host

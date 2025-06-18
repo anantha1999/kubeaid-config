@@ -5,17 +5,19 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: secrets
+  name: root
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: sealed-secrets
+    namespace: argocd
   project: kubeaid
   source:
-    path: k8s/kubeaid-demo-hetzner-hcloud/sealed-secrets
+    path: k8s/kubeaid-demo-hcloud/argocd-apps
     repoURL: https://github.com/Archisman-Mridha/kubeaid-config
     targetRevision: HEAD
-    directory:
-      recurse: true
-  syncPolicy: {}
+  syncPolicy:
+    syncOptions:
+      - ApplyOutOfSyncOnly=true

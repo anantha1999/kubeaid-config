@@ -5,24 +5,23 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: cluster-api
+  name: ccm-hetzner
   namespace: argocd
 spec:
   destination:
-    namespace: cluster-api
+    namespace: kube-system
     server: https://kubernetes.default.svc
+  project: kubeaid
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
-      path: argocd-helm-charts/cluster-api
+      path: argocd-helm-charts/ccm-hetzner
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-hetzner-hcloud/argocd-apps/values-cluster-api.yaml
+          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-ccm-hetzner.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
-  project: kubeaid
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
       - ApplyOutOfSyncOnly=true

@@ -5,37 +5,24 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: cilium
+  name: cluster-api
   namespace: argocd
 spec:
   destination:
-    namespace: cilium
+    namespace: cluster-api
     server: https://kubernetes.default.svc
-  project: kubeaid
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
-      path: argocd-helm-charts/cilium
+      path: argocd-helm-charts/cluster-api
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-hetzner-hcloud/argocd-apps/values-cilium.yaml
+          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-cluster-api.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
+  project: kubeaid
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
-  ignoreDifferences:
-    - kind: Secret
-      name: cilium-ca
-      jsonPointers:
-        - /data
-    - kind: Secret
-      name: hubble-server-certs
-      jsonPointers:
-        - /data
-    - kind: Secret
-      name: hubble-relay-client-certs
-      jsonPointers:
-        - /data
