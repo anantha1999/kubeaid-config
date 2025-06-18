@@ -27,7 +27,7 @@ cloud:
         - hel1
       hcloud:
         machineType: cax11
-        replicas: 3
+        replicas: 1
         loadBalancer:
           enabled: true
           region: hel1
