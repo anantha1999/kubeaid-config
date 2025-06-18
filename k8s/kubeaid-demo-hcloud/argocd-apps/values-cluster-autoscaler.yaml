@@ -19,7 +19,8 @@ cluster-autoscaler:
     cordon-node-before-terminating: true
 
   autoDiscovery:
-    clusterName: kubeaid-demo-hetzner-hcloud
+    clusterName: kubeaid-demo-hcloud
     namespace: capi-cluster
 
 enableClusterAPIScaleFromZeroSupport:
+  hetzner: true

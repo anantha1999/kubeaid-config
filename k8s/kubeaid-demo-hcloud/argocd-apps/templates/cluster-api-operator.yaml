@@ -5,19 +5,19 @@ metadata:
     kubeaid.io/version: "HEAD"
     kubeaid.io/managed-by: "kubeaid"
     kubeaid.io/priority: "default"
-  name: capi-cluster
+  name: cluster-api-operator
   namespace: argocd
 spec:
   destination:
-    namespace: capi-cluster
+    namespace: cluster-api-operator
     server: https://kubernetes.default.svc
   sources:
     - repoURL: https://github.com/Archisman-Mridha/kubeaid
-      path: argocd-helm-charts/capi-cluster
+      path: argocd-helm-charts/cluster-api-operator
       targetRevision: HEAD
       helm:
         valueFiles:
-          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-capi-cluster.yaml
+          - $values/k8s/kubeaid-demo-hcloud/argocd-apps/values-cluster-api-operator.yaml
     - repoURL: https://github.com/Archisman-Mridha/kubeaid-config
       targetRevision: HEAD
       ref: values
@@ -26,8 +26,3 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
-  ignoreDifferences:
-    - group: cluster.x-k8s.io
-      kind: MachineDeployment
-      jsonPointers:
-        - /spec/replicas

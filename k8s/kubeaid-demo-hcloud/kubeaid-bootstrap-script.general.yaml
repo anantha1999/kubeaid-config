@@ -15,25 +15,22 @@ cloud:
   hetzner:
     mode: hcloud
 
-    zone: eu-central
-    region: hel1
-
-    hcloudSSHKeyPairName: kubeaid-demo
-
-    networkEnabled: true
-
-    imageName: ubuntu-24.04
+    hcloud:
+      zone: eu-central
+      imageName: ubuntu-24.04
+      sshKeyPairName: kubeaid-demo
 
     controlPlane:
-      machineType: cax11
-      replicas: 3
       regions:
         - fsn1
         - nbg1
         - hel1
-      loadBalancer:
-        enabled: true
-        region: hel1
+      hcloud:
+        machineType: cax11
+        replicas: 3
+        loadBalancer:
+          enabled: true
+          region: hel1
 
     nodeGroups:
       hcloud:
@@ -45,3 +42,4 @@ cloud:
             node-role.kubernetes.io/bootstrapper: ""
             node.cluster.x-k8s.io/nodegroup: bootstrapper
           taints: []
+

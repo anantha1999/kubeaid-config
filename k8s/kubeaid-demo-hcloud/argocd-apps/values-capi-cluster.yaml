@@ -1,5 +1,5 @@
 global:
-  clusterName: kubeaid-demo-hetzner-hcloud
+  clusterName: kubeaid-demo-hcloud
   kubernetes:
     version: v1.31.0
   kubeaid:
@@ -14,38 +14,36 @@ provider:
 
 hetzner:
   mode: hcloud
-
-  zone: eu-central
-  region: hel1
-
-  hcloudSSHKeyPairName: kubeaid-demo
-
-  network:
-    enabled: true
-
-  imageName: ubuntu-24.04
+  hcloud:
+    zone: eu-central
+    imageName: ubuntu-24.04
+    sshKeyPairName: kubeaid-demo
 
   controlPlane:
-    machineType: cax11
-    replicas: 3
     regions: 
       - fsn1
       - nbg1
       - hel1
-    loadBalancer:
-      enabled: true
-      region: hel1
+
+    
+    hcloud: 
+      machineType: cax11
+      replicas: 3
+      loadBalancer:
+        enabled: true
+        region: hel1
 
   nodeGroups: 
     hcloud:
       - name: bootstrapper
-        cpu: 2
-        memory: 4096
-        minSize: 1
-        maxSize: 3
         labels:
           node-role.kubernetes.io/bootstrapper: ""
           node.cluster.x-k8s.io/nodegroup: bootstrapper
         taints: []
+        cpu: 2
+        memory: 4
+        minSize: 1
+        maxSize: 3
         machineType: cax11
         rootvolumesize: 40
+    bareMetal: []
