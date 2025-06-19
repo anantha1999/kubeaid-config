@@ -1,4 +1,0 @@
----
-cloudnative-pg:
-  monitoring:
-    podMonitorEnabled: false
