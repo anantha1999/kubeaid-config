@@ -5,7 +5,7 @@ forkURLs:
 cluster:
   name: kcm
   k8sVersion: v1.32.0
-  kubeaidVersion: 14.1.0
+  kubeaidVersion: 14.2.0
   enableAuditLogging: true
   additionalUsers:
     - name: obmondo
