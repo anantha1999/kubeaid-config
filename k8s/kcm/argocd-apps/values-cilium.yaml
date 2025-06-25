@@ -6,5 +6,4 @@ cilium:
 
   
   extraArgs:
-    - "--direct-routing-device=eth0"
-  extraArgs:
+    - "--devices=eth+,enp+"
