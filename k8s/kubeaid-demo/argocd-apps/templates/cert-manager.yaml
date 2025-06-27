@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    kubeaid.io/version: "v1.0.0"
+    kubeaid.io/managed-by: "kubeaid"
+    kubeaid.io/priority: "default"
+  name: cert-manager
+  namespace: argocd
+spec:
+  destination:
+    namespace: cert-manager
+    server: https://kubernetes.default.svc
+  project: kubeaid
+  sources:
+    - repoURL: https://github.com/anantha1999/KubeAid
+      path: argocd-helm-charts/cert-manager
+      targetRevision: v1.0.0
+      helm:
+        valueFiles:
+          - $values/k8s/kubeaid-demo/argocd-apps/values-cert-manager.yaml
+    - repoURL: https://github.com/anantha1999/kubeaid-config
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
