@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   labels:
-    kubeaid.io/version: "12.0.0"
-    kubeaid.io/managed-by: "kubeaid"
-    kubeaid.io/priority: "default"
+    kubeaid.io/version: 16.0.1
+    kubeaid.io/managed-by: kubeaid
+    kubeaid.io/sync-order: "1"
   name: root
   namespace: argocd
   finalizers:
@@ -16,7 +16,7 @@ spec:
   project: kubeaid
   source:
     path: k8s/kubeaid-demo-local/argocd-apps
-    repoURL: https://github.com/Archisman-Mridha/kubeaid-config
+    repoURL: https://github.com/anantha1999/kubeaid-config
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
