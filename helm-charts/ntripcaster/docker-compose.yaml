@@ -1,0 +1,28 @@
+# docker-compose.yaml
+
+services:
+    ntripcaster-relay:
+        image: kortforsyningen/ntripcaster-relay:latest
+        stdin_open: true
+        tty: true
+        ports:
+            - 2101:2101
+            - 81:80
+        restart: unless-stopped
+        networks:
+            - ntrip
+
+    ntripcaster-main:
+        image: kortforsyningen/ntripcaster-main:latest
+        stdin_open: true
+        tty: true
+        ports:
+            - 12101:12101
+            - 80:80
+        restart: unless-stopped
+        networks:
+            - ntrip
+
+
+networks:
+    ntrip:

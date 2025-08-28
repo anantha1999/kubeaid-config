@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "ntripcaster.fullname" . }}
+  name: {{ include "ntripcaster.fullname" . }}-caster
   labels:
     {{- include "ntripcaster.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  {{- if not .Values.ntripcaster.autoscaling.enabled }}
+  replicas: {{ .Values.ntripcaster.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
       {{- include "ntripcaster.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
+      {{- with .Values.ntripcaster.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -26,18 +26,18 @@ spec:
       {{- end }}
       serviceAccountName: {{ include "ntripcaster.serviceAccountName" . }}
       securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+        {{- toYaml .Values.ntripcaster.podSecurityContext | nindent 8 }}
       containers:
         - name: ntripcaster
           securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+            {{- toYaml .Values.ntripcaster.securityContext | nindent 12 }}
+          image: {{ .Values.ntripcaster.image.repository }}:{{ .Values.ntripcaster.image.tag | default .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.ntripcaster.image.pullPolicy }}
           ports:
             - name: ntripcaster
               containerPort: 12101
               protocol: TCP
-            - name: http
+            - name: ntripcaster-http
               containerPort: 80
               protocol: TCP
           livenessProbe:
@@ -50,37 +50,15 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.ntripcaster.resources | nindent 12 }}
-        - name: ntriprelay
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: ntriprelay
-              containerPort: 2101
-              protocol: TCP
-            - name: http
-              containerPort: 80
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          resources:
-            {{- toYaml .Values.ntriprelay.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
+      {{- with .Values.ntripcaster.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .Values.affinity }}
+      {{- with .Values.ntripcaster.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .Values.tolerations }}
+      {{- with .Values.ntripcaster.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}

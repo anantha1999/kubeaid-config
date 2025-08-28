@@ -1,0 +1,28 @@
+{{- if .Values.ntripcaster.autoscaling.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "ntripcaster.fullname" . }}-caster
+  labels:
+    {{- include "ntripcaster.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "ntripcaster.fullname" . }}
+  minReplicas: {{ .Values.ntripcaster.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.ntripcaster.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.ntripcaster.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.ntripcaster.autoscaling.targetCPUUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.ntripcaster.autoscaling.targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .Values.ntripcaster.autoscaling.targetMemoryUtilizationPercentage }}
+    {{- end }}
+{{- end }}

@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ntripcaster.fullname" . }}-relay
+  labels:
+    {{- include "ntripcaster.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.ntriprelay.autoscaling.enabled }}
+  replicas: {{ .Values.ntriprelay.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "ntripcaster.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.ntriprelay.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "ntripcaster.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.ntriprelay.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "ntripcaster.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.ntriprelay.podSecurityContext | nindent 8 }}
+      containers:
+        - name: ntriprelay
+          securityContext:
+            {{- toYaml .Values.ntriprelay.securityContext | nindent 12 }}
+          image: {{ .Values.ntriprelay.image.repository }}:{{ .Values.ntriprelay.image.tag | default .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.ntriprelay.image.pullPolicy }}
+          ports:
+            - name: ntriprelay
+              containerPort: 2101
+              protocol: TCP
+            - name: ntriprelay-http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.ntriprelay.resources | nindent 12 }}
+      {{- with .Values.ntriprelay.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.ntriprelay.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.ntriprelay.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

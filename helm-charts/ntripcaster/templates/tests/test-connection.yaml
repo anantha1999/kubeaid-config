@@ -11,5 +11,9 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "ntripcaster.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "ntripcaster.fullname" . }}-caster:{{ .Values.ntripcaster.service.port }}']
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "ntripcaster.fullname" . }}-relay:{{ .Values.ntriprelay.service.port }}']
   restartPolicy: Never
