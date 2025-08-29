@@ -8,7 +8,7 @@ spec:
   type: {{ .Values.ntriprelay.service.type }}
   ports:
     - port: 80
-      targetPort: ntriprelay-http
+      targetPort: relay-http
       protocol: TCP
       name: http
     - port: {{ .Values.ntriprelay.service.port }}

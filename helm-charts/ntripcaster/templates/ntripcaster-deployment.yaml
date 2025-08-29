@@ -37,7 +37,7 @@ spec:
             - name: ntripcaster
               containerPort: 12101
               protocol: TCP
-            - name: ntripcaster-http
+            - name: caster-http
               containerPort: 80
               protocol: TCP
           livenessProbe:

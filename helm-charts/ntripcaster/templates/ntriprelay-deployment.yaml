@@ -37,7 +37,7 @@ spec:
             - name: ntriprelay
               containerPort: 2101
               protocol: TCP
-            - name: ntriprelay-http
+            - name: relay-http
               containerPort: 80
               protocol: TCP
           livenessProbe:

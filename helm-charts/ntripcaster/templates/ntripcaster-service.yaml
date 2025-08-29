@@ -8,7 +8,7 @@ spec:
   type: {{ .Values.ntripcaster.service.type }}
   ports:
     - port: 80
-      targetPort: ntripcaster-http
+      targetPort: caster-http
       protocol: TCP
       name: http
     - port: {{ .Values.ntripcaster.service.port }}
