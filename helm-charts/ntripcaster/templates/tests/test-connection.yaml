@@ -1,11 +1,13 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
-  name: "{{ include "ntripcaster.fullname" . }}-test-connection"
+  name: {{ include "ntripcaster.fullname" . }}-test-connection
   labels:
-    {{- include "ntripcaster.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{- include "ntripcaster.labels" . | nindent 4 }}
+    helm.sh/hook: test
   annotations:
     "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
 spec:
   template:
     spec:
