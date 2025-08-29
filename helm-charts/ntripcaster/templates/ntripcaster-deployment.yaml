@@ -40,14 +40,14 @@ spec:
             - name: caster-http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: caster-http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: caster-http
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: caster-http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: caster-http
           resources:
             {{- toYaml .Values.ntripcaster.resources | nindent 12 }}
       {{- with .Values.ntripcaster.nodeSelector }}
