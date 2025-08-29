@@ -64,7 +64,7 @@ ntripcaster:
     # targetMemoryUtilizationPercentage: 80
   service:
     port: 12101
-    type: ClusterIP
+    type: LoadBalancer
 
 ntriprelay:
   image:

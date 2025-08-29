@@ -43,11 +43,11 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: relay-http
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: relay-http
           resources:
             {{- toYaml .Values.ntriprelay.resources | nindent 12 }}
       {{- with .Values.ntriprelay.nodeSelector }}
