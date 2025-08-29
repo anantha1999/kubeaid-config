@@ -68,7 +68,7 @@ ntripcaster:
 
 ntriprelay:
   image:
-    repository_path: kortforsyningen/ntripcaster-relay
+    repository: kortforsyningen/ntripcaster-relay
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: latest
