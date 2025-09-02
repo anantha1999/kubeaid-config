@@ -45,7 +45,7 @@ spec:
               path: /
               port: ntripcaster
           readinessProbe:
-            httpGet:
+            tcpSocket:
               path: /
               port: ntripcaster
           resources:

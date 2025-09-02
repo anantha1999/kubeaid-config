@@ -45,7 +45,7 @@ spec:
               path: /
               port: ntriprelay
           readinessProbe:
-            httpGet:
+            tcpSocket:
               path: /
               port: ntriprelay
           resources:
