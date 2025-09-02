@@ -40,14 +40,14 @@ spec:
             - name: relay-http
               containerPort: 80
               protocol: TCP
-          # livenessProbe:
-          #   httpGet:
-          #     path: /health
-          #     port: relay-http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /health
-          #     port: relay-http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: ntriprelay
+          readinessProbe:
+            httpGet:
+              path: /
+              port: ntriprelay
           resources:
             {{- toYaml .Values.ntriprelay.resources | nindent 12 }}
       {{- with .Values.ntriprelay.nodeSelector }}

@@ -3,6 +3,7 @@
 services:
     ntripcaster-relay:
         image: kortforsyningen/ntripcaster-relay:latest
+        container_name: ntripcaster-relay
         stdin_open: true
         tty: true
         ports:
@@ -14,6 +15,7 @@ services:
 
     ntripcaster-main:
         image: kortforsyningen/ntripcaster-main:latest
+        container_name: ntripcaster-main
         stdin_open: true
         tty: true
         ports:
