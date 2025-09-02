@@ -40,6 +40,8 @@ spec:
             - name: caster-http
               containerPort: 80
               protocol: TCP
+          stdin: true       # keep stdin open (like stdin_open: true)
+          tty: true         # allocate a TTY (like tty: true)
           livenessProbe:
             httpGet:
               path: /
