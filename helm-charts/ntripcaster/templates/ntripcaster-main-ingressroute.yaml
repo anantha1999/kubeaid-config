@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: ntripcaster-main-tcp
+  namespace: ntripcaster
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: HostSNI(`main.ntrip.test.com`)
+    services:
+    - name: ntripcaster-main
+      port: 12101
