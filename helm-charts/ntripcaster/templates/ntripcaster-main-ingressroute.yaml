@@ -11,3 +11,4 @@ spec:
     services:
     - name: ntripcaster-main
       port: 12101
+  
