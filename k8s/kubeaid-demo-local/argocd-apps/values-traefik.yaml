@@ -1,0 +1,3 @@
+traefik:
+  additionalArguments:
+    - "--entrypoints.ntrip.address=:12101/tcp"
