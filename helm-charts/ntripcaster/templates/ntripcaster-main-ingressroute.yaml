@@ -6,9 +6,9 @@ metadata:
 spec:
   entryPoints:
     - web
+    - ntrip
   routes:
   - match: HostSNI(`main.ntrip.test.com`)
     services:
     - name: ntripcaster-main
       port: 12101
-  
