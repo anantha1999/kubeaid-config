@@ -17,24 +17,24 @@
 #         - name: ntrip-stripprefix-middleware
 #   tls:
 #     secretName: ntrip-tls
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: ntripcaster-main-dashboard
-#   namespace: ntripcaster
-# spec:
-#   tls:
-#     - hosts:
-#         - main.ntrip.test.com
-#       secretName: ntrip-tls
-#   rules:
-#     - host: main.ntrip.test.com
-#       http:
-#         paths:
-#           - path: /admin
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: ntripcaster-main
-#                 port:
-#                   number: 12101
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ntripcaster-main-dashboard
+  namespace: ntripcaster
+spec:
+  tls:
+    - hosts:
+        - main.ntrip.test.com
+      secretName: ntrip-tls
+  rules:
+    - host: main.ntrip.test.com
+      http:
+        paths:
+          - path: /admin
+            pathType: Prefix
+            backend:
+              service:
+                name: ntripcaster-main
+                port:
+                  number: 12101

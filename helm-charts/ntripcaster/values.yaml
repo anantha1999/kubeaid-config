@@ -40,6 +40,9 @@ ingress:
     - hosts:
         - main.ntrip.test.com
       secretName: ntrip-tls
+    - hosts:
+        - relay.ntrip.test.com
+      secretName: ntrip-relay-tls
 
 ntripcaster:
   image:
