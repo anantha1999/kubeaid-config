@@ -1,11 +1,11 @@
 traefik:
   additionalArguments:
     - "--entrypoints.ntrip.address=:12101/tcp"
-  ports:
-    ntrip:
-      port: 12101
-      expose:
-        # Use the default service as the key and set it to true
-        default: true
-      exposedPort: 12101
-      protocol: TCP
+  # ports:
+  #   ntrip:
+  #     port: 12101
+  #     expose:
+  #       # Use the default service as the key and set it to true
+  #       default: true
+  #     exposedPort: 12101
+  #     protocol: TCP
