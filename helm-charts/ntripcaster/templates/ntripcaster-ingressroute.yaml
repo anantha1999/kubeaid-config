@@ -13,3 +13,7 @@ spec:
       services:
         - name: ntripcaster-main
           port: 12101
+  tls:
+    - secretName: ntrip-tls
+      hosts:
+        - main.ntrip.test.com
