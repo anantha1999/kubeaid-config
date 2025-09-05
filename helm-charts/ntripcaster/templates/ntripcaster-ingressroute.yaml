@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ntripcaster-main-dashboard
+  namespace: ntripcaster
+spec:
+  entryPoints:
+    - web  # address :12101/tcp
+    - websecure
+  routes:
+    - match: Host(`main.ntrip.test.com`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: ntripcaster-main
+          port: 12101
