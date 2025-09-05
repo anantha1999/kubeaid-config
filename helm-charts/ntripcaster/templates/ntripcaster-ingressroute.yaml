@@ -1,18 +1,24 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: ntripcaster-main-dashboard
+  name: ntripcaster-http-dashboard
   namespace: ntripcaster
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: ntripcaster/https-to-http@kubernetescrd
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`main.ntrip.test.com`)
-      kind: Rule
-      services:
-        - name: ntripcaster-main
-          port: ntripcaster
-      middlewares:
-        - name: https-to-http
+  rules:
+  - host: main.ntrip.test.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ntripcaster-main
+            port:
+              number: 12101
   tls:
+  - hosts:
+    - main.ntrip.test.com
     secretName: ntrip-tls
