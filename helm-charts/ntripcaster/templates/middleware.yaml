@@ -1,9 +1,9 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: https-to-http
+  name: ntrip-stripprefix-middleware
   namespace: ntripcaster
 spec:
-  headers:
-    customRequestHeaders:
-      X-Forwarded-Proto: "http"
+  stripPrefix:
+    prefixes:
+      - /admin
