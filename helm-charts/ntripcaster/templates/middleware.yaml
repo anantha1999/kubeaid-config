@@ -4,6 +4,6 @@ metadata:
   name: https-to-http
   namespace: ntripcaster
 spec:
-  redirectScheme:
-    scheme: http
-    permanent: false
+  headers:
+    customRequestHeaders:
+      X-Forwarded-Proto: "http"
