@@ -5,10 +5,9 @@ metadata:
   namespace: ntripcaster
 spec:
   entryPoints:
-    - web  # address :12101/tcp
-    - websecure
+    - web  
   routes:
-    - match: Host(`main.ntrip.test.com`) && PathPrefix(`/`)
+    - match: Host(`main.ntrip.test.com`) 
       kind: Rule
       services:
         - name: ntripcaster-main
