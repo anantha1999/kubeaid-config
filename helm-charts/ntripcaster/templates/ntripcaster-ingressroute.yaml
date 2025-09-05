@@ -8,7 +8,7 @@ spec:
     - web  
     - websecure
   routes:
-    - match: Host(`main.ntrip.test.com`) 
+    - match: Host(`main.ntrip.test.com`) && PathPrefix(`/`) 
       kind: Rule
       services:
         - name: ntripcaster-main
