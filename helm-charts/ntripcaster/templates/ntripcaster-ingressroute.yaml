@@ -7,11 +7,11 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`main.ntrip.test.com`)
+    - match: Host(`main.ntrip.test.com`) && PathPrefix(`/admin`)
       kind: Rule
       services:
         - name: ntripcaster-main
-          port: ntripcaster
-          scheme: http     
+          port: 12101
+          scheme: http
   tls:
     secretName: ntrip-tls
