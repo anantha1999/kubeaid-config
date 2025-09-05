@@ -5,7 +5,7 @@ metadata:
   namespace: ntripcaster
 spec:
   entryPoints:
-    - web
+    - ntrip
   routes:
   - match: HostSNI(`main.ntrip.test.com`)
     services:
