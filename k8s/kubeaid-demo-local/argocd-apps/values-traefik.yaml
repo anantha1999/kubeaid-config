@@ -9,4 +9,4 @@ traefik:
         default: true
       exposedPort: 12101
       protocol: TCP
-      http: true
+      http: false
