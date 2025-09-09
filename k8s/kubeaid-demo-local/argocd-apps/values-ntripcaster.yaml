@@ -1,0 +1,27 @@
+ntripcaster:
+  ingress:
+    enabled: true
+    className: traefik
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: main.ntrip.k8sdemo.cuddlefish.intern 
+        paths:
+          - path: /
+            pathType: Prefix
+            name: main
+            svcPort: 12101
+      - host: relay.ntrip.k8sdemo.cuddlefish.intern 
+        paths:
+          - path: /
+            pathType: Prefix
+            name: relay
+            svcPort: 2101
+    tls:
+      - hosts:
+          - main.ntrip.k8sdemo.cuddlefish.intern 
+        secretName: ntrip-main-tls
+      - hosts:
+          - relay.ntrip.k8sdemo.cuddlefish.intern 
+        secretName: ntrip-relay-tls
