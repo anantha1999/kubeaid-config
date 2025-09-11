@@ -5,10 +5,9 @@ metadata:
   namespace: ntripcaster
 spec:
   entryPoints:
-    - ntrip
     - websecure
   routes:
-  - match: HostSNI(`*`)
+  - match: HostSNI(`main.ntrip.test.com`)
     services:
     - name: ntripcaster-main
       port: 12101
