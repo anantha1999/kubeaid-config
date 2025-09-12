@@ -11,5 +11,6 @@ spec:
     services:
     - name: ntripcaster-main
       port: 12101
-  # tls:
-  #   passthrough: true
+  tls:
+    secretName: ntrip-tls
+    passthrough: false  # Optional, false by default
